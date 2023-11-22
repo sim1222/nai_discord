@@ -1,7 +1,7 @@
 from typing import Any, Optional, Union
 
 from Nai.utils import create_encryption_key
-from Nai.ImagePreset import * 
+from Nai.ImagePreset import *
 from .NovelAIError import NAIError
 
 import json
@@ -22,8 +22,7 @@ class NOVELAIAPI:
         self._id = _id # ユーザーID
         self._password = password # ユーザーパスワード
         self.session = None # HTTPセッション
-        
-    
+
     async def __aenter__(self):
         """非同期処理開始
         """
@@ -72,7 +71,7 @@ class NOVELAIAPI:
                 yield rsp, await self.treat_response_stream(rsp, content)
 
             # シングルなら
-            else: 
+            else:
                 yield rsp, await self.treat_response(rsp, rsp) # コンテンツ処理
 
     async def request(self, method: str, endpoint: str, data: Optional[Union[dict[str, Any], str]]=None):
@@ -116,7 +115,7 @@ class NOVELAIAPI:
             _password (str): パスワード
         """
         access_key = create_encryption_key(_id, _password) # 暗号化キーの取得
-        content = await self._login(access_key) # ログイン処理 
+        content = await self._login(access_key) # ログイン処理
         self.headers["Authorization"] = f"Bearer {content['accessToken']}" # ヘッダーにトークンを登録
 
     async def _login(self, access_key: str) -> None:
@@ -138,13 +137,13 @@ class NOVELAIAPI:
             prompt (str): プロンプト
             model (ImageModel): 生成モデル
             preset (ImagePreset): 設定
-        """ 
+        """
         settings = preset.confirm() # 設定読み込み
 
-        quality_toggle = settings["quality_toggle"] 
+        quality_toggle = settings["quality_toggle"]
         # クォリティトグルがオンならプロンプト追加
         if quality_toggle:
-            prompt = f"masterpiece, best quality, {prompt}" 
+            prompt = f"masterpiece, best quality, {prompt}"
 
         # HTTPリクエスト
         async for i in self._generate_image(prompt, model, settings):
@@ -185,7 +184,7 @@ class NOVELAIAPI:
         """ストリームデータ処理
 
         Args:
-            rsp (ClientResponse): レスポンスヘッダ  
+            rsp (ClientResponse): レスポンスヘッダ
             data (bytes): データ
 
         Returns:
@@ -225,7 +224,7 @@ class NOVELAIAPI:
         # エラー
         if type(content) is dict and "error" in content:
             raise NAIError(rsp.status, content["error"])
-        
+
         # 成功
         if rsp.status == status:
             return content

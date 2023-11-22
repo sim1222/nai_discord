@@ -37,7 +37,7 @@ def load_cf_cfg() -> dict[str, str]:
 def load_nai_cfg() -> dict[str, str]:
     with initialize(version_base=None, config_path="conf"):
         cfg: DictConfig = compose(config_name="config")
-        return cfg["nai"]        
+        return cfg["nai"]
 
 app = MyAPP().app # FastAPI起動
 
@@ -45,7 +45,6 @@ app = MyAPP().app # FastAPI起動
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-        
 
 @app.post("/generate_image")
 async def image_config(config: ImageConfigPreset):
@@ -54,7 +53,7 @@ async def image_config(config: ImageConfigPreset):
     NAI: NOVELAIAPI = NOVELAIAPI(cfg_nai["userid"], cfg_nai["password"])
 
     # CFのセットアップ
-    cfg_cf: dict[str, str] = load_cf_cfg() 
+    cfg_cf: dict[str, str] = load_cf_cfg()
     CF: CloudFlareAPI = CloudFlareAPI(cfg_cf["userid"], cfg_cf["apitoken"])
 
     # リクエストをパース

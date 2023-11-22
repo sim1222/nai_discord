@@ -39,7 +39,7 @@ interface UserConfig {
  function createConfigReturn(obj: ImagePreset){
   let res:string = ""; // 出力用string
   // 文字整形
-  res += `<@${obj["id"]}>'s image setting\n` 
+  res += `<@${obj["id"]}>'s image setting\n`
   for (let [key, value] of Object.entries(obj)) {
     if (key != "id") {
       res += `${key} : ${value}\n`;
@@ -95,7 +95,7 @@ async function interactionCallback(req: Request, res: Response) {
 
   // スラッシュコマンドの返答
   if (type === InteractionType.APPLICATION_COMMAND) {
-    
+
     // コマンドタイプ取得
     const { name } = data;
 
@@ -202,7 +202,7 @@ async function interactionCallback(req: Request, res: Response) {
       // ユーザーid取得
       const userId = req.body.member.user.id;
       let response:string = "";
-      
+
       // 設定が保存されていない場合
       if (!(userId in userConifg)) {
         response = `<@${userId}>'s Default Settings`;
@@ -231,7 +231,7 @@ app.listen(PORT, () => {
     SETIMAGECONFIG, // NAI設定作成
     SHOWIMAGESETTING, // NAI設定参照
   ]);
-  
+
   // スラッシュコマンド全削除
   //DeleteGuildCommandsAll(process.env.APP_ID, process.env.GUILD_ID);
 

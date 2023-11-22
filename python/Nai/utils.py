@@ -15,7 +15,6 @@ def create_encryption_key(_id: str, _password: str):
     """
     encryption_key: str = get_access_key(_id, _password)
     return encryption_key
-    
 
 def argon_hash(id: str, password: str, size: int, domain: str) -> str:
     """ハッシュ化関数
@@ -31,11 +30,11 @@ def argon_hash(id: str, password: str, size: int, domain: str) -> str:
     """
     pre_salt: str = password[:6] + id + domain
 
-    # salt 
+    # salt
     blake = blake2b(digest_size=16) #ハッシュインスタンス作成
     blake.update(pre_salt.encode()) #ハッシュ更新
     salt: bytes = blake.digest() # バイト列出力
-    
+
     raw: bytes = low_level.hash_secret_raw(password.encode(), salt, 2, int(2000000/1024), 1, size, low_level.Type.ID) # ハッシュ生成
     hashed: str = urlsafe_b64encode(raw).decode() #base64でエンコード, str化
 

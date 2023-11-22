@@ -1,7 +1,7 @@
 import * as fs from "fs";
 
 /** オブジェクトタイプ判定
- * 
+ *
  * @param obj 判定するオブジェクト
  */
 function searchType(obj: Object){
@@ -32,7 +32,7 @@ export interface ImagePreset {
 }
 
 /**
- * 
+ *
  */
 async function _request(url:string, method:string = "GET", body?: Object){
 
@@ -59,7 +59,7 @@ async function _request(url:string, method:string = "GET", body?: Object){
     }
 
     console.log(response.headers.get("content-type"));
-    
+
     // データ取得
     const data: any = await treat_request(response);
     searchType(data);

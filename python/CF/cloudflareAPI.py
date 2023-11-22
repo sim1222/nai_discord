@@ -18,7 +18,7 @@ class CloudFlareAPI():
         self.APIKEY = _APIKEY # APIKey
         self.USERID = _USERID # ユーザーID
         self.headers = {"Authorization": f"Bearer {_APIKEY}"} # ヘッダー
-        pass    
+        pass
 
     async def __aenter__(self):
         """非同期処理開始
@@ -45,7 +45,7 @@ class CloudFlareAPI():
             _type_: _description_
         """
         url = self.BASEURL + self.USERID + endpoint # HTTPエンドポイント作成
-        # リクエストデータを作成する 
+        # リクエストデータを作成する
         kwargs = {
             "headers" : self.headers,
             "data" : data

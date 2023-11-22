@@ -6,7 +6,7 @@ interface choices {
 }
 
 interface CommandOption {
-	type: number, // レスポンスタイプ 
+	type: number, // レスポンスタイプ
 	name:  string, // オプション名
 	description: string, // オプション説明
   choices?: Array<choices>,
@@ -40,7 +40,7 @@ export async function HasGuildCommands(appId: string, guildId: string, commands:
   commands.forEach((c: SetCommand) => HasGuildCommand(appId, guildId, c));
 }
 
-// ギルドコマンドの確認 
+// ギルドコマンドの確認
 async function HasGuildCommand(appId: string, guildId: string, command: SetCommand) {
 	// ギルドコマンドAPIのエンドポイント
   const endpoint = `applications/${appId}/guilds/${guildId}/commands`;
@@ -249,7 +249,6 @@ export const SETIMAGECONFIG: SetCommand = {
         }
       ]
     },
-    
   ],
   type: 1,
 };

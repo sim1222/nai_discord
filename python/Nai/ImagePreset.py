@@ -97,7 +97,7 @@ class ImagePreset():
         "uc": "" # ネガティブワード
     }
 
-    # デフォルトネガティブワード    
+    # デフォルトネガティブワード
     _UC_DEFAULT: dict = {
         UCPreset.Preset_Low_Quality_Bad_Anatomy: "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, "
                                                  "fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, "
@@ -121,11 +121,10 @@ class ImagePreset():
             v (Any): value
         """
         # キーチェック
-        assert o in self._DEFUALT, f"{o} is not a valid setting" 
+        assert o in self._DEFUALT, f"{o} is not a valid setting"
         # 型チェック
         assert isinstance(v, type(self._DEFUALT[o])) or isinstance(v, type(None)), f"Expected type [{type(self._DEFUALT[o])}], for [{o}] but got type [{type(v)}]"
         self._settings[o] = v # アップデート
-        
 
     def update(self, values: dict[str, Any]):
         """設定のアップデート
@@ -150,18 +149,18 @@ class ImagePreset():
         if type(resolution) is ImageResolution:
             resolution = resolution.value
         settings["width"], settings["height"] = resolution
-        
+
         # シード値
         if settings["seed"] == 0:
             settings["seed"] = random.randint(1, 0xFFFFFFFF)
-        
+
         uc_preset: UCPreset = settings.pop("ucPreset")
         uc: str = settings.pop("uc")
         default_uc = self._UC_DEFAULT[uc_preset]
         combined_uc = f"{default_uc}, {uc}" if uc else default_uc
         settings["uc"] = combined_uc
         settings["ucPreset"] = uc_preset.value
-            
+
         # サンプラー
         sampler: ImageSampler = settings.pop("sampler")
         settings["sampler"] = sampler.value
