@@ -8,19 +8,4 @@ WORKDIR /usr/src/app
 # 可能であれば (npm@5+)
 # COPY package*.json ./
 
-# RUN npm installFROM node:18.12.1
-
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
-
-# Install application dependencies
-RUN npm install
-
-# Copy the rest of the application code
-COPY . .
-
-# Specify the command to run when the container starts
-CMD [ "npm", "start" ]
+# RUN npm install
