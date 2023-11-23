@@ -19,6 +19,6 @@ services:
       - ./python:/usr/src/app
     command: bash -c "uvicorn main:app --host 0.0.0.0 --reload"
     ports:
-      - "8000:9232" #既存のサービスと被らないようにした
+      - "9232:9232" #既存のサービスと被らないようにした
     tty: true
     restart: always
