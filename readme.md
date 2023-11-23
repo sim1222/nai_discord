@@ -1,28 +1,6 @@
 ### これは何？
 
-ngrokによってホストされているDiscordBotです。NOVELAIのAPIを叩いて画像生成を行います
-
-<div style="display:flex">
-<img src="./gif/setting.gif" width=40%>
-<img src="./gif/generate.gif" width=40%>
-</div>
-
-
-**環境**
-
-- raspberry pi 4 model b
-- Distributor ID: Debian
-- Release:  11
-- 64bit
-- arrch64
-
-Node-JS
-- 18.12
-
-Python
-- 3.10
-依存環境の関係により3.11以上では動作しない
-
+元のリポジトリを見てください。
 
 **備忘録**
 
