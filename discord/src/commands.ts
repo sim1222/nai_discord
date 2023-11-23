@@ -151,16 +151,84 @@ export const SETIMAGECONFIG: SetCommand = {
       description: '画像サイズ',
       choices: [
         {
-          name: "Portrait",
+          name: "Wallpaper_Portrait",
+          value: "Wallpaper_Portrait"
+        },
+        {
+          name: "Wallpaper_Landscape",
+          value: "Wallpaper_Landscape"
+        },
+        {
+          name: "Small_Portrait",
+          value: "Small_Portrait"
+        },
+        {
+          name: "Small_Landscape",
+          value: "Small_Landscape"
+        },
+        {
+          name: "Small_Square",
+          value: "Small_Square"
+        },
+        {
+          name: "Normal_Portrait",
           value: "Normal_Portrait"
         },
         {
-          name: "LandScape",
-          value: "Normal_LandScape"
+          name: "Normal_Landscape",
+          value: "Normal_Landscape"
         },
         {
-          name: "Square",
+          name: "Normal_Square",
           value: "Normal_Square"
+        },
+        {
+          name: "Small_Portrait_v2",
+          value: "Small_Portrait_v2"
+        },
+        {
+          name: "Small_Landscape_v2",
+          value: "Small_Landscape_v2"
+        },
+        {
+          name: "Small_Square_v2",
+          value: "Small_Square_v2"
+        },
+        {
+          name: "Normal_Portrait_v2",
+          value: "Normal_Portrait_v2"
+        },
+        {
+          name: "Normal_Landscape_v2",
+          value: "Normal_Landscape_v2"
+        },
+        {
+          name: "Normal_Square_v2",
+          value: "Normal_Square_v2"
+        },
+        {
+          name: "Small_Portrait_v3",
+          value: "Small_Portrait_v3"
+        },
+        {
+          name: "Small_Landscape_v3",
+          value: "Small_Landscape_v3"
+        },
+        {
+          name: "Small_Square_v3",
+          value: "Small_Square_v3"
+        },
+        {
+          name: "Normal_Portrait_v3",
+          value: "Normal_Portrait_v3"
+        },
+        {
+          name: "Normal_Landscape_v3",
+          value: "Normal_Landscape_v3"
+        },
+        {
+          name: "Normal_Square_v3",
+          value: "Normal_Square_v3"
         }
       ]
     },
@@ -182,6 +250,10 @@ export const SETIMAGECONFIG: SetCommand = {
           value: "k_euler_ancestral"
         },
         {
+          name: "k_heun",
+          value: "k_heun"
+        },
+        {
           name: "plms",
           value: "plms"
         },
@@ -189,6 +261,42 @@ export const SETIMAGECONFIG: SetCommand = {
           name: "ddim",
           value: "ddim"
         },
+        {
+          name: "nai_smea",
+          value: "nai_smea"
+        },
+        {
+          name: "nai_smea_dyn",
+          value: "nai_smea_dyn"
+        },
+        {
+          name: "k_dpmpp_2m",
+          value: "k_dpmpp_2m"
+        },
+        {
+          name: "k_dpmpp_2s_ancestral",
+          value: "k_dpmpp_2s_ancestral"
+        },
+        {
+          name: "k_dpmpp_sde",
+          value: "k_dpmpp_sde"
+        },
+        {
+          name: "k_dpm_2",
+          value: "k_dpm_2"
+        },
+        {
+          name: "k_dpm_2_ancestral",
+          value: "k_dpm_2_ancestral"
+        },
+        {
+          name: "k_dpm_adaptive",
+          value: "k_dpm_adaptive"
+        },
+        {
+          name: "k_dpm_fast",
+          value: "k_dpm_fast"
+        }
       ]
     },
     {
@@ -212,16 +320,28 @@ export const SETIMAGECONFIG: SetCommand = {
       description: 'ネガティブプロンプトプリセット',
       choices: [
         {
-          name: "Low_Quality_Bad_Anatomy",
+          name: "Low_Quality_Bad_Anatomy(Curated, Full, Furry)",
           value: "Preset_Low_Quality_Bad_Anatomy"
         },
         {
-          name: "Low_Quality",
+          name: "Low_Quality(Curated, Full, Furry)",
           value: "Preset_Low_Quality"
         },
         {
-          name: "None",
+          name: "Bad_Anatomy(Furry)",
+          value: "Preset_Bad_Anatomy"
+        },
+        {
+          name: "None(Curated, Full, Furry, v2, v3)",
           value: "Preset_None"
+        },
+        {
+          name: "Heavy(v2, v3)",
+          value: "Preset_Heavy"
+        },
+        {
+          name: "Light(v2, v3)",
+          value: "Presets_Light"
         }
       ]
     },
@@ -240,12 +360,20 @@ export const SETIMAGECONFIG: SetCommand = {
           value: "Anime_Curated"
         },
         {
+          name: "Furry",
+          value: "Furry"
+        },
+        {
           name: "Anime_Full",
           value: "Anime_Full"
         },
         {
-          name: "Furry",
-          value: "Furry"
+          name: "Anime_v2",
+          value: "Anime_v2"
+        },
+        {
+          name: "Anime_v3",
+          value: "Anime_v3"
         }
       ]
     },
