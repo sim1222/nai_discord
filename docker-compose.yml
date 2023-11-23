@@ -1,33 +1,13 @@
 version: "3.8"
 
 services:
-  # web:
-  #   build: ./.docker-config/.nginx
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./.docker-config/.nginx/nginx.conf:/etc/nginx/nginx.conf
-
-  ngrok:
-    image: ngrok/ngrok:latest
-    ports:
-      - "4040:4040"
-    volumes:
-      - ./ngrok:/etc/ngrkok
-    environment:
-      NGROK_CONFIG: /etc/ngrkok/ngrok.yml
-    depends_on:
-      - nodejs
-    restart: always
-
   nodejs:
     build: ./.docker-config/.nodejs
     volumes:
       - ./discord:/usr/src/app
     command: bash -c "npx ts-node ./src/app.ts"
     expose:
-      - "3000"
+      - "6162" #既存のサービスと被らないようにした
     tty: true
     restart: always
     depends_on:
@@ -39,15 +19,6 @@ services:
       - ./python:/usr/src/app
     command: bash -c "uvicorn main:app --host 0.0.0.0 --reload"
     ports:
-      - "8000:8000"
+      - "8000:9232" #既存のサービスと被らないようにした
     tty: true
     restart: always
-
-  # back:
-  #     build: ./.docker-config/.python
-  #     # command: mix phx.server
-  #     # volumes:
-  #     #   - .:/workspace
-  #     expose:
-  #       - "4000"
-  #     tty: true
