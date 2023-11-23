@@ -75,7 +75,7 @@ function checkImagePresetType(obj: ImagePreset) {
 // Express APP 作成
 const app: express.Express = express();
 // ポート番号指定
-const PORT: number = Number(process.env.PORT) || 3000;
+const PORT: number = Number(process.env.PORT) || 6162;
 // 認証機能をすべてのリクエストに適用
 app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 
