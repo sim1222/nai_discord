@@ -191,7 +191,7 @@ class NOVELAIAPI:
         Returns:
             Any: 処理済みデータ
         """
-        data = data.decode()
+        data = data.decode(errors='replace')
 
         if rsp.content_type == "text/event-stream":
             # パース
