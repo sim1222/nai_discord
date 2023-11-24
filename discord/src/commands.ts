@@ -320,19 +320,19 @@ export const SETIMAGECONFIG: SetCommand = {
       description: 'ネガティブプロンプトプリセット',
       choices: [
         {
-          name: "Low_Quality_Bad_Anatomy(Curated, Full, Furry)",
+          name: "Low_Quality_Bad_Anatomy",
           value: "Preset_Low_Quality_Bad_Anatomy"
         },
         {
-          name: "Low_Quality(Curated, Full, Furry)",
+          name: "Low_Quality",
           value: "Preset_Low_Quality"
         },
         {
-          name: "Bad_Anatomy(Furry)",
+          name: "Bad_Anatomy",
           value: "Preset_Bad_Anatomy"
         },
         {
-          name: "None(Curated, Full, Furry, v2, v3)",
+          name: "None",
           value: "Preset_None"
         },
         {
