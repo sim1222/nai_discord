@@ -38,8 +38,8 @@ class ImageModel(enum.Enum):
     Anime_Curated = "safe-diffusion" # デフォルト
     Furry = "nai-diffusion-furry" # ケモノ
     Anime_Full = "nai-diffusion" # v1?
-    Anime_v2 = "nai-diffusion-v2" # v2
-    Anime_v3 = "nai-diffusion-v3" # v3
+    Anime_v2 = "nai-diffusion-2" # v2
+    Anime_v3 = "nai-diffusion-3" # v3
 
 class ImageResolution(enum.Enum):
     """画像サイズ
