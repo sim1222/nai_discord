@@ -40,8 +40,8 @@ services:
     volumes:
       - ./python:/usr/src/app
     command: bash -c "uvicorn main:app --host 0.0.0.0 --port 9232 --reload"
-    expose:
-      - "9232" #既存のサービスと被らないようにした
+    ports:
+      - "9232:9232" #既存のサービスと被らないようにした
     tty: true
     restart: always
 
