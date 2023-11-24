@@ -120,48 +120,17 @@ _DEFUALT: ImagePreset = {
 }
 
 _UCDEFAULT: dict = {
-        ImageModel.Anime_Curated: {
             UCPreset.Preset_Low_Quality_Bad_Anatomy: "nsfw, lowres, bad anatomy, bad hands, text, error, "
             "missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, "
             "jpeg artifacts, signature, watermark, username, blurry",
-            UCPreset.Preset_Bad_Anatomy: None,
             UCPreset.Preset_Low_Quality: "nsfw, lowres, text, cropped, worst quality, low quality, normal quality, "
             "jpeg artifacts, signature, watermark, twitter username, blurry",
-            UCPreset.Preset_None: "lowres",
-        },
-        ImageModel.Anime_Full: {
-            UCPreset.Preset_Low_Quality_Bad_Anatomy: "nsfw, lowres, bad anatomy, bad hands, text, error, "
-            "missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, "
-            "jpeg artifacts, signature, watermark, username, blurry",
             UCPreset.Preset_Bad_Anatomy: None,
-            UCPreset.Preset_Low_Quality: "nsfw, lowres, text, cropped, worst quality, low quality, normal quality, "
-            "jpeg artifacts, signature, watermark, twitter username, blurry",
             UCPreset.Preset_None: "lowres",
-        },
-        ImageModel.Furry: {
-            UCPreset.Preset_Low_Quality_Bad_Anatomy: None,
-            UCPreset.Preset_Low_Quality: "nsfw, worst quality, low quality, what has science done, what, "
-            "nightmare fuel, eldritch horror, where is your god now, why",
-            UCPreset.Preset_Bad_Anatomy: "{worst quality}, low quality, distracting watermark, [nightmare fuel], "
-            "{{unfinished}}, deformed, outline, pattern, simple background",
-            UCPreset.Preset_None: "low res",
-        },
-        # v2
-        ImageModel.Anime_v2: {
-            UCPreset.Preset_Heavy: "nsfw, lowres, bad, text, error, missing, extra, fewer, cropped, jpeg artifacts, "
-            "worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, "
-            "scan artifacts",
-            UCPreset.Preset_Light: "nsfw, lowres, jpeg artifacts, worst quality, watermark, blurry, very displeasing",
-            UCPreset.Preset_None: "lowres",
-        },
-        # v3
-        ImageModel.Anime_v3: {
             UCPreset.Preset_Heavy: "nsfw, lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, "
             "bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, "
             "artistic error, username, scan, [abstract]",
             UCPreset.Preset_Light: "nsfw, lowres, jpeg artifacts, worst quality, watermark, blurry, very displeasing",
-            UCPreset.Preset_None: "lowres",
-        },
     }
 
 class ImagePreset():
@@ -179,48 +148,17 @@ class ImagePreset():
 
     # デフォルトネガティブワード
     _UC_DEFAULT: dict = {
-        ImageModel.Anime_Curated: {
             UCPreset.Preset_Low_Quality_Bad_Anatomy: "nsfw, lowres, bad anatomy, bad hands, text, error, "
             "missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, "
             "jpeg artifacts, signature, watermark, username, blurry",
-            UCPreset.Preset_Bad_Anatomy: None,
             UCPreset.Preset_Low_Quality: "nsfw, lowres, text, cropped, worst quality, low quality, normal quality, "
             "jpeg artifacts, signature, watermark, twitter username, blurry",
-            UCPreset.Preset_None: "lowres",
-        },
-        ImageModel.Anime_Full: {
-            UCPreset.Preset_Low_Quality_Bad_Anatomy: "nsfw, lowres, bad anatomy, bad hands, text, error, "
-            "missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, "
-            "jpeg artifacts, signature, watermark, username, blurry",
             UCPreset.Preset_Bad_Anatomy: None,
-            UCPreset.Preset_Low_Quality: "nsfw, lowres, text, cropped, worst quality, low quality, normal quality, "
-            "jpeg artifacts, signature, watermark, twitter username, blurry",
             UCPreset.Preset_None: "lowres",
-        },
-        ImageModel.Furry: {
-            UCPreset.Preset_Low_Quality_Bad_Anatomy: None,
-            UCPreset.Preset_Low_Quality: "nsfw, worst quality, low quality, what has science done, what, "
-            "nightmare fuel, eldritch horror, where is your god now, why",
-            UCPreset.Preset_Bad_Anatomy: "{worst quality}, low quality, distracting watermark, [nightmare fuel], "
-            "{{unfinished}}, deformed, outline, pattern, simple background",
-            UCPreset.Preset_None: "low res",
-        },
-        # v2
-        ImageModel.Anime_v2: {
-            UCPreset.Preset_Heavy: "nsfw, lowres, bad, text, error, missing, extra, fewer, cropped, jpeg artifacts, "
-            "worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, "
-            "scan artifacts",
-            UCPreset.Preset_Light: "nsfw, lowres, jpeg artifacts, worst quality, watermark, blurry, very displeasing",
-            UCPreset.Preset_None: "lowres",
-        },
-        # v3
-        ImageModel.Anime_v3: {
             UCPreset.Preset_Heavy: "nsfw, lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, "
             "bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, "
             "artistic error, username, scan, [abstract]",
             UCPreset.Preset_Light: "nsfw, lowres, jpeg artifacts, worst quality, watermark, blurry, very displeasing",
-            UCPreset.Preset_None: "lowres",
-        },
     }
 
     _settings: dict[str, Any]
