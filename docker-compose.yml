@@ -26,8 +26,8 @@ services:
     volumes:
       - ./discord:/usr/src/app
     command: bash -c "npx ts-node ./src/app.ts"
-    expose:
-      - "6162" #既存のサービスと被らないようにした
+    ports:
+      - "6162:6162" #既存のサービスと被らないようにした
     tty: true
     restart: always
     depends_on:
