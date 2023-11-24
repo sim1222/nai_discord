@@ -1,0 +1,7 @@
+cloudflare:
+  userid: YOUR_CLOUDFLARE_USER_ID
+  apitoken: YOUR_CLOUDFLARE_API_TOKEN
+
+nai:
+  userid: YOUR_NAI_USER_ID
+  password: YOUR_NAI_PASSWORD
