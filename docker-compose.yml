@@ -22,6 +22,7 @@ services:
   #   restart: always
 
   nodejs:
+    container_name: discord
     build: ./.docker-config/.nodejs
     volumes:
       - ./discord:/usr/src/app
@@ -34,6 +35,7 @@ services:
       - python
 
   python:
+    container_name: backend
     build: ./.docker-config/.python
     volumes:
       - ./python:/usr/src/app
