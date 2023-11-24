@@ -4,7 +4,7 @@ from Nai.utils import create_encryption_key
 from Nai.ImagePreset import *
 from .NovelAIError import NAIError
 
-import json
+import json, re
 from base64 import b64decode
 from aiohttp import ClientResponse, ClientSession
 
@@ -147,8 +147,11 @@ class NOVELAIAPI:
 
         # HTTPリクエスト
         async for i in self._generate_image(prompt, model, settings):
-           print(i)
-           yield b64decode(i) #
+            if isinstance(i, str) and re.match('^[A-Za-z0-9+/]+[=]{0,2}$', i):
+                yield b64decode(i) #
+            else:
+                # Handle non-base64 encoded data
+                yield i
 
     async def _generate_image(self, prompt: str, model: ImageModel, parameters: dict[str, Any]):
         """画像生成
