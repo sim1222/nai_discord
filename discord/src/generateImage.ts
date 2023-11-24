@@ -79,7 +79,7 @@ async function treat_request(res: any){
 }
 
 export async function generateImage(body: ImagePreset){
-    const url = "http://localhost:9232/generate_image";
+    const url = "http://python:9232/generate_image";
     return await _request(url, "POST", body)
 }
 
