@@ -147,6 +147,7 @@ class NOVELAIAPI:
 
         # HTTPリクエスト
         async for i in self._generate_image(prompt, model, settings):
+           print(i)
            yield b64decode(i) #
 
     async def _generate_image(self, prompt: str, model: ImageModel, parameters: dict[str, Any]):
