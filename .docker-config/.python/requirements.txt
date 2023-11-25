@@ -4,3 +4,4 @@ hydra-core==1.2.0
 omegaconf==2.2.3
 uvicorn==0.18.3
 argon2-cffi==21.3.0
+boto3==1.29.6

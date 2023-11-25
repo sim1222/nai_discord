@@ -1,4 +1,5 @@
 from typing import Union, Optional, Tuple, Dict
+import uuid
 from pydantic import BaseModel
 import fastapi
 from fastapi.responses import StreamingResponse
@@ -7,6 +8,7 @@ from Nai import NOVELAIAPI, ImagePreset, ImageModel, UCPreset, ImageResolution, 
 from hydra import compose, initialize
 from omegaconf import DictConfig
 from CF import CloudFlareAPI
+from CF import CloudFlareR2
 
 class ImageConfigPreset(BaseModel):
     id: Optional[str] = None
@@ -54,18 +56,19 @@ async def image_config(config: ImageConfigPreset):
 
     # CFのセットアップ
     cfg_cf: dict[str, str] = load_cf_cfg()
-    CF: CloudFlareAPI = CloudFlareAPI(cfg_cf["userid"], cfg_cf["apitoken"])
+
+    R2: CloudFlareR2 = CloudFlareR2(cfg_cf["userid"], cfg_cf["bucket"], cfg_cf["keyid"], cfg_cf["accesskey"])
 
     # リクエストをパース
     prompt, model, preset = parse_img_config(config)
 
     # 画像リクエスト送信
-    async with NAI as NaiAPI, CF as CfAPI:
+    async with NAI as NaiAPI, R2 as R2API:
         async for img in NaiAPI.generate_image(prompt, model, preset):
-            data: Dict[str, bytes] = {"file": img}
-            cf_res = await CfAPI._imageUpload(data)
-            print(cf_res)
-            return cf_res["result"]["variants"]
+            name = uuid.uuid1()
+            res = await R2API.imageUpload(name, img)
+            print(res)
+            return res
 
 def parse_img_config(config: ImageConfigPreset = {}) -> Tuple[str, ImageModel, ImagePreset]:
     model: Optional[ImageModel] = None

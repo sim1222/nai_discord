@@ -1,6 +1,9 @@
 cloudflare:
   userid: YOUR_CLOUDFLARE_USER_ID
-  apitoken: YOUR_CLOUDFLARE_API_TOKEN
+  bucket: YOUR_CLOUDFLARE_BUCKET_NAME
+  keyid: YOUR_CLOUDFLARE_KEY_ID
+  accesskey: YOUR_CLOUDFLARE_ACCESS_KEY
+  r2publicurl: YOUR_CLOUDFLARE_R2_PUBLIC_URL # https://r2.example.com
 
 nai:
   userid: YOUR_NAI_USER_ID
